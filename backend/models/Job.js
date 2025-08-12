@@ -6,6 +6,11 @@ const noteSchema = new mongoose.Schema({
 });
 
 const jobSchema = new mongoose.Schema({
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
   plate: { type: String, required: true },
   model: { type: String, required: true },
   maintenance: { type: String, required: true },
